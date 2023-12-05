@@ -1,23 +1,17 @@
-const num1 = prompt('Enter any number:');
-const num2 = prompt('Enter 2nd number:');
-const num3 = prompt('Enter 3rd number:');
-const num4 = prompt('Enter 4th number:');
-const num5 = prompt('Enter 5th number:');
+let arrNum = [];
+/*Tekee tyhjän listan*/
 
- let arr = [num1, num2, num3, num4, num5];
-    let output = '';
-
-    for (let i = arr.length - 1; i >= 0; i--) {
-      output += arr[i] + ' ';
-    }
-
-    document.getElementById('output').innerHTML = output;
-
-
-/*
-let arr = [num1, num2, num3, num4, num5];
-let nums = arr;
-for (let nums in arr) {
-  document.getElementById('output').innerHTML = nums
+for (let i = 0; i < 5; i++) { /*Toistaa alla olevaa toimintaa 5 kertaa*/
+  let askNum = prompt(`Give me a random number (${i + 1})`); /*tekee stringin, jossa selain promptaa kysymyksen*/
+  arrNum.push(askNum); /* tallentaa .push metodilla annetut luvut listaan*/
 }
-*/
+
+let reverse = '';
+/*Luo tyhjän merkkijonon*/
+
+for (let i = arrNum.length - 1; i >= 0; i--) { /*kääntää arrNum tallennetut arvot toisinpäin*/
+  reverse += arrNum[i] + ' '; /*lisää käännetyt arvot reserve-merkkijonoon*/
+}
+
+document.getElementById('output').innerHTML = reverse;
+/*liittää reverse-merkkijonon HTML:ään*/
